@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub Page</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>GitHub Page</h1>
+  </header>
+
+  <main>
+    <section id="todo">
+      <h2>To-Do List</h2>
+      <form id="todo-form">
+        <ul id="checkbox-list">
+          <li>
+            <input type="checkbox" id="checkbox-1">
+            <label for="checkbox-1">Check/clean occurrence data</label>
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox-2">
+            <label for="checkbox-2">Make distribution images: NSW + Oz</label>
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox-3">
+            <label for="checkbox-3">Species ID images and captions</label>
+          </li>
+          <li>
+            <input type="checkbox" id="checkbox-4">
+            <label for="checkbox-4">Q files</label>
+          </li>
+          <!-- Add more checkboxes here as needed -->
+
+        </ul>
+        <input type="text" id="todo-input" placeholder="Enter a name">
+        <button type="submit" id="add-button">Add</button>
+      </form>
+      <ul id="todo-list">
+        <!-- To-do list items will be dynamically added here -->
+      </ul>
+    </section>
+
+
+    <section id="archived">
+      <h2>Archived Lists</h2>
+      <ul id="archived-list">
+        <li>
+          <details>
+            <summary>List 1</summary>
+            <ul>
+              <li>Task 1</li>
+              <li>Task 2</li>
+              <li>Task 3</li>
+              <!-- Add more tasks here as needed -->
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>List 2</summary>
+            <ul>
+              <li>Task 1</li>
+              <li>Task 2</li>
+              <li>Task 3</li>
+              <!-- Add more tasks here as needed -->
+            </ul>
+          </details>
+        </li>
+        <!-- Add more archived lists here as needed -->
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Your Name</p>
+  </footer>
+
+  <script src="archive_script.js"></script>
+</body>
+</html>
