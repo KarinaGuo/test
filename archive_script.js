@@ -44,26 +44,22 @@ todoForm.addEventListener('submit', function (e) {
     todoInput.value = '';
 
     // Create a link between the archived list item and the to-do list item
-    const archivedListItem = document.createElement('li');
-    archivedListItem.innerHTML = `
-      <details>
-        <summary>${todoName}</summary>
-        <ul>
-          <li>Task 1</li>
-          <li>Task 2</li>
-          <li>Task 3</li>
-          <!-- Add more tasks here as needed -->
-        </ul>
-      </details>
-    `;
+    const archivedListItem = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = todoName;
+    archivedListItem.appendChild(summary);
 
-    archivedListItem.addEventListener('click', function () {
-      // Expand or collapse the archived list item
-      archivedListItem.querySelector('details').open = !archivedListItem.querySelector('details').open;
+    const detailList = document.createElement('ul');
+
+    // Retrieve all checked checkboxes
+    const checkboxes = document.querySelectorAll('#checkbox-list input:checked');
+    checkboxes.forEach(function (checkbox) {
+      const detailItem = document.createElement('li');
+      detailItem.textContent = checkbox.nextElementSibling.textContent;
+      detailList.appendChild(detailItem);
     });
 
-    // Set the data attribute to link the archived list item with the to-do list item
-    archivedListItem.setAttribute('data-linked-item', id);
+    archivedListItem.appendChild(detailList);
 
     // Append the archived list item to the Archived Lists section
     archivedList.appendChild(archivedListItem);
